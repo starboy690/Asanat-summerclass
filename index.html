@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(223, 217, 217, 0.755);
+            padding: 10px 20px;
+        }
+
+        .logo p{
+            color: #0b0b0bd0;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo i{
+            margin-right: 10px;
+            color: #00b7ff;
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li{
+            display: inline;
+            
+        }
+
+        nav ul li i{
+            margin-right: 8px;
+        }
+
+
+        nav ul li a{
+            color: #080808;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover{
+            color: #499ebc;
+        }
+
+        .btn{
+            background-color: #0a95e1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover{
+            background-color: hsl(214, 100%, 51%);
+            color: rgb(250, 249, 249);
+        }
+
+
+        .content{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(114, 147, 188, 0.252);
+            height: 480px;
+            padding-top: 40px;
+        }
+
+        .content .words{
+            padding-left: 20px;
+            text-align: left;
+            display: block;
+        }
+
+        .content .words h1{
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+      .content .words h1 span{
+            color: #2ab0ed;
+        }
+
+
+        .content .words p{
+            font-size: 18px;
+            color: #555;
+            width: 60%;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .content .words .btns{
+            display: flex;
+            gap: 20px;
+        }
+        .content .image{
+          margin-right: auto;
+            text-align: center;
+            height: 90%;
+            width: 700px;
+            display: flex;
+            margin-right: 45px;
+        }
+        .content .image img{
+            width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .words .details{
+            display: block;
+            margin-top: 50px;
+            align-items: center;
+            margin-left: 25px;
+
+        }
+
+        .words .details p{
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            color: #0b0b0b;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        i#two{
+            color: #e0ac42d0;
+        }
+
+
+        .About{
+            height: 560px;
+        }
+
+
+        .About h1{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+            color: #333;
+        }
+        .About p{
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            width: 60%;
+            margin: 20px auto;
+        }
+        .cards{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            height: 290PX;
+            margin-top: 67px;
+        }
+
+        .card1{
+            background-color: #fff;
+            border-radius: 10px;
+            padding-top: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card1 .icon{
+            font-size: 40px;
+            color: #39a4dd;
+            margin-bottom: 10px;
+        }
+
+
+        .card1 h2{
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card1 p{
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            text-align: left;
+           
+           
+        }
+        .card1:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+
+        .table{
+            display: flex;
+            justify-content: center;
+            padding: 20px 20px;
+            margin-top: 50px;
+        }
+
+        .table .words{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            margin-left: -126px;
+            
+        }
+
+
+        .table .words h1{
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-top: -40px;
+        }
+        .table .words p{
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .table .image img{
+            border-radius: 12px;
+           margin-top: 54px;
+            margin-left: 20px;
+        }
+
+        .table .more{
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .table .more p{
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #069ef1;
+        }
+
+        .table .more p span{
+            font-size: 24px;
+            color: #0b0b0b;
+            margin-bottom: 5px;
+        }
+
+        .table .more p#one{
+            color: #e0ac42d0;
+             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .table .more p#one i{
+            font-size: 28px;
+            color: #0b0b0b;
+             margin-bottom: 8px;
+        }
+
+        .courses{
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgba(132, 178, 235, 0.378);
+            height: 1260px;
+            padding-top: 34px;
+            
+        }
+
+        .courses h1{
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .courses p{
+            font-size: 18px;
+            color: #555;
+            width: 60%;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+
+        .card-auto{
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            margin-top: 120px;
+        }
+
+        .card-auto .card#one{
+            background-color: #fff;
+            border-radius: 10px;
+            width: 650px;
+            height: 650px;
+            text-align: center;
+        }
+
+        .card-auto .card#one .header{
+            display: flex;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(12, 12, 221, 0.87);
+            margin-top: -20px;
+           
+        }
+
+        .card-auto .card#one .header .co{
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: flex;
+            margin-left: 8px;
+            flex-direction: column;
+        }
+
+
+        .card-auto .card#one .header .co p{
+            color: #fff;
+            margin-bottom: 10px;
+            margin-left: 7px;
+             width: 100%;
+        }
+
+        .card-auto .card#one .header button{
+            background-color: #64a8cdc4;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            margin-left: 12px;
+             width: 40%;
+            padding: 4px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-auto .card#one .header .price{
+            font-size: 20px;
+            color: #fff;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .card-auto .card#one .header .price p{
+            font-size: 24px;
+            color: white;
+            margin-bottom: 6px;
+            font-weight: bold;
+            width: 100%;
+        }
+       
+         .card-auto .card#one .header .price p#one{
+            font-size: 14px;
+            color: #e1dbdb;
+            margin-left: 20px;
+        }
+
+        .card-auto .card#one #card{
+            font-size: 17px;
+            color: #555;
+            width: 80%;
+            line-height: 1.7;
+            text-align: left;
+            margin-top: 50px;
+            margin-left: 40px;
+
+        }
+
+
+        .card-auto .card#one .ps{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+           gap: 30px;
+            
+        }
+
+        .card-auto .card#one .ps p{
+            font-size: 19px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            margin-left: 45px;
+        }
+
+        .card-auto .card#one .ps p span{
+            font-size: 24px;
+            color: #416fca;
+        }
+
+        .card-auto .card#one h3{
+            font-size: 18px;
+            color: #0b0b0b;
+            margin-top: 40px;
+            text-align: left;
+            margin-left: 45px;
+        }
+
+
+
+        .card-auto .card#one .last{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 23px;
+            margin-left: 55px;
+
+        }
+
+
+        .card-auto .card#one .last button{
+            border: 1px solid rgba(22, 22, 194, 0.874);
+            width: 140px;
+            border-radius: 23px;
+            background-color: white;
+            color: rgb(22, 22, 194);
+        }
+
+
+        .card-auto .card#one button#last{
+            width: 85%;
+            text-align: center;
+            align-items: center;
+            height: 36px;
+            color: white;
+            margin-top: 45px;
+            border-radius: 7px;
+            background-color: rgba(3, 107, 253, 0.874);
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+
+
+        }
+
+
+        .card-auto .card#one button#last:hover{
+            background-color: rgb(3, 107, 253);
+        }
+
+        .cen{
+            text-align: center;
+            margin-top: 50px;
+           
+        }
+
+
+        .contact{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px 20px;
+            margin-top: 50px;
+        }
+
+        .contact .infos{
+            width: 30%;
+            height: 660px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact .info1{
+            background-color: #fff;
+            padding: 20px;
+            height: 360px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact .infos .info1 h3{
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact .infos .info1 .icons{
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 20px;
+        }
+
+        .contact .infos .info1 .icons i{
+            font-size: 24px;
+            color: #1265eaaa;
+            margin-right: 10px;
+        }
+
+        .contact .infos .info1 .icons_text{
+            display: flex;
+            
+            flex-direction: column;
+            gap: 7px;
+        }
+
+
+        .contact .infos .info1 .icons_text p{
+          text-align: left;
+          margin: 0;
+            color: #555;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .contact .infos .info1 .icons_text p:first-child{
+            font-weight: bold;
+            color: #0b0b0b;
+            margin-left: auto;
+        }
+
+        .info2{
+            background-color: #267bfa;
+            padding: 20px;
+            border-radius: 10px;
+            height: 290px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+
+        .info2 h3{
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .info2 ul{
+            padding-left: 20px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        form{
+            width: 50%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            height: 660PX;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        form h2{
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form label{
+            display: block;
+            margin-bottom: 10px;
+            color: #0a0a0a;
+            font-size: large;
+        }
+
+        form input, select, textarea{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form input:focus, select:focus, textarea:focus{
+            border-color: #0a95e1;
+            outline: none;
+        }
+
+        form .one{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            
+        }
+
+        select{
+            outline: none;
+        }
+
+        textarea{
+            height: 200px;
+        }
+
+        form .one div{
+            width: 48%;
+        }
+
+
+        form .two{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        form .two div{
+            width: 48%;
+            margin-top: 12px;
+        }
+
+
+        form .three{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+
+        form .three div{
+            width: 48%;
+            margin-top: 12px;
+        }
+
+        form .four{
+            margin-top: 20px;
+        }
+
+        form .four label{
+            display: block;
+            margin-bottom: 10px;
+            color: #0a0a0a;
+            font-size: large;
+        }
+
+        form .four textarea{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            height: 150px;
+        }
+
+        form button{
+            width: 100%;
+            background-color: #0a95e1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            height: 49px;;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover{
+            background-color: #0a75c1;
+        }
+
+
+        @media only screen and (max-width: 2880px) and (min-width: 2000px) {
+
+
+
+
+            .logo p{
+                font-size: 30px;
+            }
+            nav ul li a{
+                font-size: 27px;
+            }
+            .content{
+                padding-top: 60px;
+                height: 600px;
+            }
+
+            .btn{
+                padding: 12px 24px;
+                font-size: 28px;
+            }
+
+            .btn i{
+                margin-right: 12px;
+                font-size: 25px;
+            }
+
+            .content .words h1{
+                font-size: 48px;
+            }
+
+            .content .words p{
+                font-size: 27.5px;
+                width: 90%;
+            }
+
+
+            .content .image{
+                margin-top: -8px;
+            }
+
+
+            .About h1{
+                font-size: 48px;
+            }
+
+            .About p{
+                font-size: 29px;
+                width: 80%;
+            }
+
+            .cards{
+                flex-direction: row;
+                align-items: center;
+                margin-top: 164px;
+                gap: 90px;
+                justify-content: center;
+            }
+
+            .card1{
+                width: 390px;
+                height: 370px;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .card1 h2{
+                font-size: 30px;
+            }
+
+            .card1 p{
+                font-size: 22px;
+                line-height: 1.8;
+                margin-top: 32px;
+            }
+
+            .card1 .icon{
+                font-size: 50px;
+                margin-bottom: 15px;
+                margin-top: 12px;
+            }
+
+
+            .table{
+                flex-direction: row;
+                align-items: center;
+                margin-top: 94px;
+                
+            }
+
+            .table .words{
+                width: 60%;
+                margin-left: -100px;
+            }
+
+            .table .words h1{
+                font-size: 48px;
+            }
+
+            .table .words p{
+                font-size: 27px;
+                width: 80%;
+            }
+
+            .table .image img{
+                width: 600px;
+                height: 450px;
+            }
+
+            .courses{
+                height: 103vh;
+                margin-bottom: 65px;
+            }
+            
+
+            .courses h1{
+                font-size: 48px;
+            }
+
+            .courses p{
+                font-size: 27px;
+                width: 80%;
+            }
+
+            .card-auto{
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+                margin-top: 120px;
+            }
+
+            .card-auto .card#one{
+                width: 800px;
+                height: 750px;
+            }
+            .card-auto .card#one .header{
+                padding: 20px;
+            }
+            .card-auto .card#one .header .co{
+                font-size: 30px;
+                margin-left: 20px;
+            }
+            .card-auto .card#one .header button{
+                width: 30%;
+                padding: 4px;
+                font-size: 18px;
+            }
+            .card-auto .card#one .header .price{
+                font-size: 24px;
+                margin-right: 30px;
+            }
+
+            .card-auto .card#one .header .price p{
+                font-size: 30px;
+            }
+
+            .card-auto .card#one #card{
+                font-size: 22px;
+                width: 80%;
+                margin-top: 50px;
+                margin-left: 60px;
+            }
+
+            .card-auto .card#one .ps{
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+                gap: 30px;
+            }
+
+            .card-auto .card#one .ps p{
+                font-size: 24px;
+                margin-left: 60px;
+            }
+
+            .card-auto .card#one h3{
+                font-size: 24px;
+                margin-left: 60px;
+            }
+
+            .card-auto .card#one .last{
+                flex-direction: row;
+                gap: 20px;
+                margin-top: 30px;
+                margin-left: 60px;
+            }
+
+            .card-auto .card#one .last button{
+                width: 160px;
+                font-size: 18px;
+            }
+
+            .card-auto .card#one button#last{
+                width: 90%;
+                height: 50px;
+                font-size: 20px;
+                margin-top: 60px;
+            }
+            
+        }
+
+
+        @media only screen and (max-width: 1204px) {
+     
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+         <p><i class="fa-brands fa-google-scholar"></i><span>Asanat's SummerClass</span></p>   
+        </div>
+
+
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="div.about"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><a href="courses.html"><i class="fa-solid fa-book"></i> Courses</a></li>
+             <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+           
+        </ul>
+
+
+        <button class="btn"><i class="fa-solid fa-book" style="margin-right: 8px;"></i>Enroll Now</button>
+    </nav>
+
+
+    <div class="content">
+        
+    <div class="words">
+         
+        <h1>Make This Summer <span>Extraordinary</span></h1> 
+        <p>Join our engaging summer learning program designed to keep students excited about education while building essential skills for the upcoming school year.</p>
+         
+         <div class="btns">
+            <button class="btn"><i class="fa-solid fa-arrow-right"></i> Get Started</button>
+            <button class="btn"><i class="fa-solid fa-info"></i> Learn More</button>
+        </div>
+        
+
+        <div class="details">
+            <p><i id="one" class="fa-solid fa-users-line"></i>Limited N° of Students</p>
+            <p><i id= "two" class="fa-solid fa-medal"></i> 15+ Years Experience</p>
+        </div>
+
+
+    </div>
+       
+
+        <div class="image">
+            <img src="Lehrerin-oder-Dozent-steht-im.jpg.webp">
+
+        </div>
+    </div>
+
+
+
+    <div class="About">
+        <h1>About My  Home-Tutoring Program</h1>
+        <p>Hi! I'm Ms. Asanat, passionate educator with over 15 years experience working directly with students. My vacation program combines academic and socio-emmotional learning and provide the appropriate learning tools to support all learners and learners with diverse and special needs.</p>
+
+
+
+        <div class="cards">
+
+
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-solid fa-chalkboard-teacher"></i>
+                </div>
+                <h2>Interactive Learning</h2>
+                <p>My program features hands-on activities and engaging lessons that make learning enjoyable.</p>
+            </div>
+
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h2>Fun and Creative Instructor</h2>
+                <p>Learn from dedicated educator who are committed to helping students succeed.</p>
+            </div>
+
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-solid fa-calendar-alt"></i>
+                </div>
+                <h2>Flexible Schedule</h2>
+                <p>We offer a variety of classes and times to fit your family's needs.</p>
+            </div>
+
+            <div class="card1">
+                <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h2>Community Focused</h2>
+                <p>Join a supportive community of learners and parents who share your commitment to education.</p>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    <div class="table">
+        <div class="words">
+            <h1>Why Choose Home-Tutoring?</h1>
+            <p>Our home-tutoring program offers personalized attention, flexible scheduling, and a curriculum tailored to your child's needs. We focus on building confidence and fostering a love for learning.</p>
+            <p>We focus on building confidence, fostering creativity, and preparing students for success in the upcoming school year through hands-on activities and personalized instruction</p>
+
+
+            <div class="more">
+                <p><span><i class="fa-solid fa-infinity"></i></span>Limited N° of Students</p>
+
+                <p id="one"><i class="fa-solid fa-award"></i></span>15+ Years Experience</p >
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="group.jpg" style="width: 550px; height: 420px">
+        </div>
+     </div>
+
+
+
+    <div class="courses">
+        <h1>Explore Our Courses</h1>
+        <p>We offer a wide range of courses to cater to different interests and learning styles. From math and science to arts and humanities, there's something for everyone.</p>
+        <p>Our courses are designed to be engaging, interactive, and aligned with educational standards.</p>
+    
+
+
+
+    <div class="card-auto">
+
+
+        <div id="one" class="card">
+        <div class="header">
+            
+            <div class="co">
+            <p>Reading & Writing Adventure</p>
+            <button>Ages 6-8</button>
+            </div>
+
+            <div class="price">
+             <p>CFA 15,000</p>
+             <p id="one">Per Program</p>
+            </div>
+
+        </div>
+
+        <p id="card">Exciting experiments and discoveries that bring science to life through hands-on learning.</p>
+
+        <div class="ps">
+            <p><span><i class="fa-solid fa-calendar-week"></i></span>Mon-Wed-Fri 1:00 - 3:00 PM</p>
+
+            <p><span><i class="fa-solid fa-clock"></i></span> 4 Weeks</p>
+
+            <p><span><i class="fa-solid fa-users"></i></span> 5+ Students</p>
+        </div>
+
+
+        <h3>What's included:</h3>
+
+        <div class="last">
+            <button>Fun Experiment</button>
+            <button style="width: 105px;">Science</button>
+            <button style="width: 105px;">Reiade</button>
+            <button >Nature exploration</button>
+        </div>
+
+
+
+        <button id="last">Enroll Now</button>
+
+        </div>
+
+
+
+
+        <div id="one"  class="card">
+        <div class="header">
+        <div class="co">
+            <p>Reading & Writing Adventure</p>
+            <button>Ages 9-12</button>
+        </div>
+            <div class="price">
+             <p>CFA 25,000</p>
+             <p id="one">Per Program</p>
+            </div>
+        </div>
+
+        <p id="card">Exciting experiments and discoveries that bring science to life through hands-on learning.</p>
+
+        <div class="ps">
+            <p><span><i class="fa-solid fa-calendar-week"></i></span>Mon-Wed-Fri 1:00 - 3:00 PM</p>
+
+            <p><span><i class="fa-solid fa-clock"></i></span> 4 Weeks</p>
+
+            <p><span><i class="fa-solid fa-users"></i></span> 5+ Students</p>
+        </div>
+
+
+        <h3>What's included:</h3>
+
+        <div class="last">
+            <button>Fun Experiment</button>
+            <button style="width: 105px;">Science</button>
+            <button style="width: 105px;">Reiade</button>
+            <button>Nature exploration</button>
+        </div>
+
+
+
+        <button id="last">Enroll Now</button>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="cen">
+        <h2>Get In Touch</h2>
+        <p>Ready to give your child an amazing summer learning experience? Let's discuss which program is perfect for them.</p>
+
+    </div>
+
+
+    <div class="contact">
+
+
+        <div class="infos">
+            <div class="info1">
+                <h3>Contact Information</h3>
+
+                <div class="icons">
+                <i class="fa-solid fa-envelope"></i>
+
+                <div class="icons_text">
+                  <p>Email:</p>
+                <p>asanatayilara@gmail.com</p>  
+                </div>
+                </div>
+
+                <div class="icons">
+                <i class="fa-solid fa-phone"></i>
+                <div class="icons_text">
+                <p>Phone:</p>
+                <p>+225 0153532709 / 0575288436</p>
+                </div>
+                </div>
+
+                <div class="icons">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="icons_text">
+                <p>Location:</p>
+                <p>Abidjan, Côte d'Ivoire</p>
+                </div>
+                </div>
+
+                <div class="icons">
+                <i class="fa-solid fa-clock"></i>
+                <div class="icons_text">
+                <p>Office Hours:</p>
+                <p>8:00 AM - 6:00PM</p>
+                </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="info2">
+
+                <h3>Quick Facts</h3>
+
+                <ul style="padding-left: 20px; text-align: left;">
+                    <li>Personalized Learning</li>
+                    <li>Flexible Scheduling</li>
+                    <li>Small class sizes (8-12 students)</li>
+                    <li>Progress reports given</li>
+                    <li>Flexible payment plans available</li>
+                </ul>
+            
+            </div>
+
+        </div>
+
+
+        <form action="">
+            <h2>Registration Form</h2>
+            <div class="one">
+             <div>  
+            <label for="name"> Parent/Guardian's Name<span style="color: red;">*</span>:</label>
+            <input type="text" id="name" name="name" required>
+            </div> 
+            
+            <div >
+            <label for="email">Email<span style="color: red;">*</span>:</label>
+            <input type="email" id="email" name="email" required>
+            </div>
+
+            </div>
+
+            <div class="two">
+            <div>
+           <label for="phone">Phone Number<span style="color: red;">*</span>:</label>
+            <input type="tel" id="phone" name="phone" required>
+            </div>
+
+
+            <div>
+            <label for="child-name">Child's Name<span style="color: red;">*</span>:</label>
+            <input type="text" id="child-name" name="child-name" required>
+            </div>
+
+            </div>
+
+            <div class="three">
+            <div>
+                <label for="age">Child's Age<span style="color: red;">*</span>:</label>
+                <select id="age" name="age" required>
+                    <option value="">Select Age</option>
+                    <option value="6-8">6-8</option>
+                    <option value="9-11">9-12</option>
+                 </select>
+                 </div>
+            <div>
+                <label for="program">Preferred Program<span style="color: red;">*</span>:</label>
+                <select id="program" name="program" required>
+                    <option value="">Select Program</option>
+                    <option value="reading-writing">Reading & Writing Adventure</option>
+                    <option value="science-exploration">Science Exploration</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="four">
+                <label for="message">Additional Questions or Comments:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell me about your child's interests, learning goals, or any question you have......."></textarea>
+            </div>
+
+            <button type="submit" id="last" class="btn">Submit Registration</button>
+
+
+
+            
+
+
+        </form>
+    </div>
+    
+</body>
+</html>
