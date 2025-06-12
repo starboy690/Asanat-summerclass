@@ -21,8 +21,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(223, 217, 217, 0.755);
+            background-color: rgb(223, 217, 217);
             padding: 10px 20px;
+            overflow: hidden;
         }
 
         .logo p{
@@ -60,6 +61,53 @@
         nav ul li a:hover{
             color: #499ebc;
         }
+
+        .menu{
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu i{
+            color: #0b0b0b;
+        }
+
+
+        .popup{
+            display: none;
+            position: absolute;
+            top: 47.5px;
+            width: 100%;
+            height: 82px;
+            left: 0;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            filter: blur(40%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            
+
+        }
+
+        .popup button{
+            height: 38PX;
+            align-items: center;
+            margin-top: 12px;
+            background-color: #0a95e1;
+            color: #fff;
+            margin-left: 22px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button:hover{
+            background-color: #0a75c1;
+        }
+
+
 
         .btn{
             background-color: #0a95e1;
@@ -216,6 +264,7 @@
         .table{
             display: flex;
             justify-content: center;
+            position: relative;
             padding: 20px 20px;
             margin-top: 50px;
         }
@@ -889,6 +938,10 @@
 
         @media only screen and (max-width: 1370px) {
             
+
+            .logo p{
+                font-size: 20px;
+            }
             .About{
                 height: 800px;
             }
@@ -963,6 +1016,105 @@
                 gap: 50px;
                 margin-top: 50px;
             }
+
+
+            .content .image{
+                display: none;
+            }
+
+            .content{
+                align-items: center;
+                height: auto;
+                padding: 20px;
+                justify-content: center;
+               
+            }
+
+            .content .words{
+                text-align: left;
+                width: 100%;
+            }
+
+
+            .content .words p{
+                font-size: 18px;
+                width: 80%;
+                text-align: left;
+            }
+
+
+        }
+
+
+        @media only screen and (max-width: 1180px){
+            .contact{
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .contact .infos{
+                width: 90%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            .contact .info2{
+                height: auto;
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .contact .info2 ul{
+               margin-top: 21px;
+            }
+
+            .contact .info2 ul li{
+                font-size: 16px;
+                line-height: 1.9;
+            }
+
+            form{
+                width: 90%;
+                height: auto;
+                padding: 20px;
+            }
+        }
+
+
+        @media only screen and (max-width: 900px){
+            nav ul{
+                display: none;
+            }
+
+            nav{
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                
+            }
+
+            nav button.btn{
+                display: none;
+            }
+
+            .menu{
+                display: block;
+            }
+
+            .popup{
+                display: block;
+            }
+
+            .popup button{
+                width: 100%;
+                padding: 12px;
+                font-size: 18px;
+            }
+
+
         }
 
 
@@ -989,6 +1141,15 @@
 
 
         <button class="btn"><i class="fa-solid fa-book" style="margin-right: 8px;"></i>Enroll Now</button>
+
+        <div class="menu">
+        <i id="ax" class="fa-solid fa-bars"></i>
+        <i id="az" class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="popup">
+            <button style="width: 176px;">Enroll Now</button>
+        </div>
     </nav>
 
 
