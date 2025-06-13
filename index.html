@@ -1429,7 +1429,7 @@
 
         <ul>
             <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="div.about"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><i class="fa-solid fa-user"></i> About</li>
             <li><a href="courses.html"><i class="fa-solid fa-book"></i> Courses</a></li>
              <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
            
@@ -1807,6 +1807,13 @@
         function hideSidebar(){
             document.querySelector('.popup').style.display = 'none';
         }
+        const about = document.querySelector(".about")
+        about.addEventListener("click",(e)=>{
+            e.preventDefault();
+            about.innerHTML= ` <h1>About My  Home-Tutoring Program</h1>
+        <p>Hi! I'm Ms. Asanat, passionate educator with over 15 years experience working directly with students. My vacation program combines academic and socio-emmotional learning and provide the appropriate learning tools to support all learners and learners with diverse and special needs.</p>         `
+        history.pushState(null,'','/about');
+        })
 
 
     </script>
