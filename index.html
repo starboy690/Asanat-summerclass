@@ -555,7 +555,7 @@
 
         .contact .info1{
             background-color: #fff;
-            padding: 20px;
+            padding: 15px;
             height: 360px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -582,7 +582,6 @@
 
         .contact .infos .info1 .icons_text{
             display: flex;
-            
             flex-direction: column;
             gap: 7px;
         }
@@ -604,7 +603,7 @@
 
         .info2{
             background-color: #267bfa;
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
             height: 290px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -1233,10 +1232,15 @@
                 padding: 3px;
              }
 
+             .contact .infos{
+                display: flex;
+                flex-direction: column;
+            }
+
             }
 
 
-        @media (max-width: 500px){
+        @media (max-width: 501px){
             .logo span{
                 font-size: 15px;
             }
@@ -1323,8 +1327,71 @@
                 align-items: center;
             }
 
+            .contact .infos{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact .infos .info1{
+                height: auto;
+                width: auto;
+            }
+
+             .contact .infos .info1 .icons_text{
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+             }
+
+             .contact .infos .info1 .icons_text p{
+                margin-top: -9px;
+             }
+
+          
+
+
+
+
 
         }
+
+
+         @media (max-width: 575px){
+               form .one, .two, .three, .four{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+             }
+
+             form select{
+                width: 150%;
+             }
+
+             form  input{
+                width: 160%;
+             }
+
+             form h2{
+                font-size: 24px;
+             }
+
+             form .one{
+                margin-top: 12px;
+             }
+
+
+
+
+              form .one label{
+                width: 100%;
+              }
+
+
+         }
+
+
+
+
 
 
       
