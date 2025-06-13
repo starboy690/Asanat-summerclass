@@ -1109,6 +1109,19 @@
         }
 
 
+        .Hambuger.active .bar:nth-child(2){
+            opacity: 0;
+        }
+
+         .Hambuger.active .bar:nth-child(1){
+            transform: translateY(8px) rotate(45deg);
+        }
+
+
+          .Hambuger.active .bar:nth-child(3){
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
         .bar{
             display: block;
             width: 25px;
@@ -1118,6 +1131,18 @@
             transition: all 0.3s ease-in-out;
             background-color: black;
 
+        }
+
+         .popup{
+            margin-top: -100%;
+         }
+
+
+        .popup.active{
+            position: fixed;
+            transition: 0.3s;
+            margin-top: 0;
+            filter: blur(50px);
         }
 
 
@@ -1803,14 +1828,13 @@
 
 
     <script>
-        function showSidebar(){
-            document.querySelector('.popup').style.display = 'block';
+      const hambuger = document.querySelector(".Hambuger");
+      const popup = document.querySelector(".popup");
 
-        }
-
-        function hideSidebar(){
-            document.querySelector('.popup').style.display = 'none';
-        }
+      hambuger.addEventListener("click", ()=> {
+        hambuger.classList.toggle("active");
+        popup.classList.toggle("active");
+      })
         
         
 
