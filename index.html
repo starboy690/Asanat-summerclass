@@ -57,8 +57,7 @@
             color: #080808;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s ease;
-            transition: all 0.4s ease-in-out;
+            transition:  5s ;
         }
         nav ul li a:hover{
             color: #499ebc;
@@ -1100,8 +1099,14 @@
 
             nav{
                 position: fixed;
+                top: 0;
                 width: 100%;
-                z-index: 999;
+                z-index: 199;
+                
+            }
+
+             .content {
+                margin-top: 49px;
             }
 
             nav button.btn{
@@ -1112,6 +1117,16 @@
              .Hambuger{
             display: block;
             cursor: pointer;
+            width: 45px;
+            align-items: center;
+            height: 45px;
+           
+          
+        }
+
+        .Hambuger:hover{
+            background-color: rgba(173, 172, 172, 0.367);
+             border-radius: 2px;
         }
 
 
@@ -1130,9 +1145,9 @@
 
         .bar{
             display: block;
-            width: 25px;
+            width: 28px;
             height: 3px;
-            margin: 5px;
+            margin: 7px;
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
             background-color: black;
@@ -1143,8 +1158,9 @@
 
         .popup.active{
             position: fixed;
-            transition: 0.3s;
+            transition: 1s;
             display: block;
+            margin-top: 15px;
             
         }
 
@@ -1477,7 +1493,7 @@
         </div>
 
         <div class="popup">
-            <button style="width: 276px;">Enroll Now</button>
+            <a href="#contact"> <button style="width: 176px;">Enroll Now</button></a>
         </div>
     </nav>
 
