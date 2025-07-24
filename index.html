@@ -24,6 +24,9 @@
             background-color: rgb(223, 217, 217);
             padding: 10px 20px;
             overflow: hidden;
+            position: fixed;
+            z-index: 999;
+            width: 100%;
         }
 
         .logo p{
@@ -57,10 +60,10 @@
             color: #080808;
             text-decoration: none;
             font-size: 18px;
-            transition:  5s ;
+            transition:  0.5s ;
         }
         nav ul li a:hover{
-            color: #499ebc;
+            color: #4ac9f7;
         }
 
         .Hambuger{
@@ -143,13 +146,14 @@
             justify-content: space-between;
             background-color: rgba(114, 147, 188, 0.252);
             height: 480px;
-            padding-top: 40px;
+          
         }
 
         .content .words{
             padding-left: 20px;
             text-align: left;
             display: block;
+            margin-top: 67px;
         }
 
         .content .words h1{
@@ -177,10 +181,11 @@
         .content .image{
           margin-right: auto;
             text-align: center;
-            height: 90%;
+            height: 80%;
             width: 700px;
             display: flex;
             margin-right: 45px;
+            margin-top: 52px;
         }
         .content .image img{
             width: 600px;
@@ -309,6 +314,7 @@
             border-radius: 12px;
            margin-top: 54px;
             margin-left: 20px;
+            position: relative;
         }
 
         .table .more{
@@ -1106,7 +1112,7 @@
             }
 
              .content {
-                margin-top: 49px;
+                margin-top: 19px;
             }
 
             nav button.btn{
@@ -1452,6 +1458,9 @@
             }
 
          }
+
+
+         
 
 
 
@@ -1846,6 +1855,12 @@
 
 
 
+    <footer>
+        
+    </footer>
+
+
+
     <script>
       const hambuger = document.querySelector(".Hambuger");
       const popup = document.querySelector(".popup");
@@ -1854,7 +1869,7 @@
         hambuger.classList.toggle("active");
         popup.classList.toggle("active");
       })
-        
+
         
 
 
