@@ -1611,6 +1611,59 @@
         }
 
 
+        .popup1{
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            background-color: #a2cbe0;
+            display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-top: 95px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            
+
+
+        }
+
+         .popup1 img{
+            margin-top: -50px;
+            position: relative;
+            margin-bottom: -12px;
+        }
+
+
+         .popup1 h1{
+            font-size: 37px;
+            margin-bottom: 8px;
+           
+        }
+
+        .popup1 p{
+            font-size: 17px;
+            color: #0b0b0b;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .popup1 button{
+            width: 80%;
+            height: 50px;
+            background-color: #0a95e1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+
 
 
 
@@ -1942,6 +1995,18 @@
         </div>
 
 
+        <div class="popup1">
+            <img  src="pngtree-green-check-mark-png-image_6525691.png" alt="popup image" style="width: 75px ; height: 75px;">
+            <h1 >Thank You!</h1>
+            <p>Your details have been succesfully submitted. Thanks</p>
+            <button class="submitn" onclick="document.querySelector('.popup1').style.display='none'; document.getElementById('form').reset()">
+                OK
+            </button>
+
+        </div>
+
+
+
         <form action="" id="form">
             <h2>Registration Form</h2>
             <div class="one">
@@ -1995,7 +2060,7 @@
                 <textarea id="message" name="message" rows="4" placeholder="Tell me about your child's interests, learning goals, or any question you have......."></textarea>
             </div>
 
-            <button type="submit" id="last" class="btn">Submit Registration</button>
+            <button type="submit" id="lastsubmit" class="btn">Submit Registration</button>
 
 
 
@@ -2057,11 +2122,41 @@
     <script>
       const hambuger = document.querySelector(".Hambuger");
       const popup = document.querySelector(".popup");
+      const submit = document.getElementById("lastsubmit");
+      const form = document.getElementById("form");
 
       hambuger.addEventListener("click", ()=> {
         hambuger.classList.toggle("active");
         popup.classList.toggle("active");
       })
+
+      submit.addEventListener("click", (e) => {
+        form.onsubmit = (e) => {
+          e.preventDefault(); // Prevent the default form submission
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const childName = document.getElementById("child-name").value;
+          const age = document.getElementById("age").value;
+          const program = document.getElementById("program").value;
+          const message = document.getElementById("message").value;
+
+          console.log("Form submitted with the following data:");
+          console.log("Parent/Guardian's Name:", name);
+
+          if(!name || !email || !phone || !childName || !age || !program) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+            const popup1 = document.querySelector(".popup1");
+            popup1.style.display = "flex";
+        };
+
+        
+       
+
+
+      });
 
         
 
