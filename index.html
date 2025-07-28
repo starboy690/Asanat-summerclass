@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="/Asanat-summerclass/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/Asanat-summerclass/favicon.svg" />
-<link rel="shortcut icon" href="/Asanat-summerclass/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/Asanat-summerclass/apple-touch-icon.png" />
-<link rel="manifest" href="/Asanat-summerclass/site.webmanifest" />
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
     <title>Document</title>
 
     <style>
@@ -1634,6 +1632,16 @@
 
         }
 
+        .popup1.show{
+            display: flex;
+        }
+        /* Blur effect */
+        .blurred{
+            filter: blur(12px);
+            pointer-events: none;
+            user-select: none;
+        }
+
          .popup1 img{
             margin-top: -50px;
             position: relative;
@@ -1667,14 +1675,7 @@
         }
 
 
-        form#blur.active{
-            filter: blur(20px);
-            pointer-events: none;
-        }
-
-        form#blur{
-            transition: filter 0.3s ease;
-        }
+     
 
         
 
@@ -1694,7 +1695,7 @@
 
     </style>
 </head>
-<body>
+<body id="form2">
 
     <nav>
         <div class="logo">
@@ -2074,7 +2075,7 @@
                 <textarea id="message" name="message" rows="4" placeholder="Tell me about your child's interests, learning goals, or any question you have......."></textarea>
             </div>
 
-            <button type="submit" id="lastsubmit" class="btn" >Submit Registration</button>
+            <button type="submit" id="lastsubmit" class="btn" onclick="openPopup()" >Submit Registration</button>
 
 
 
@@ -2166,6 +2167,11 @@
             popup1.style.display = "flex";
 
         };
+
+        function openPopup(){
+            document.getElementById('popup1').classList.add('show');
+            document.getElementById('form2').classList.add('blurred')
+        }
 
     
        
