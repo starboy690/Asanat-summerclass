@@ -1612,20 +1612,23 @@
 
 
         .popup1{
-            position: absolute;
+            position: fixed;
             width: 400px;
             height: 300px;
             background-color: #a2cbe0;
             display: flex;
-            display: none;
+           display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
             margin-top: 95px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            backdrop-filter: blur(55px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 40%;
+            
+        
             
 
 
@@ -1663,6 +1666,17 @@
             margin-top: 10px;
         }
 
+
+        form#blur.active{
+            filter: blur(20px);
+            pointer-events: none;
+        }
+
+        form#blur{
+            transition: filter 0.3s ease;
+        }
+
+        
 
 
 
@@ -1707,7 +1721,7 @@
         </div>
 
         <div class="popup">
-            <a href="#contact"> <button style="width: 176px;">Enroll Now</button></a>
+            <a href="#form"> <button style="width: 176px;">Enroll Now</button></a>
         </div>
     </nav>
 
@@ -1720,7 +1734,7 @@
         <p>Join our engaging summer learning program designed to keep students excited about education while building essential skills for the upcoming school year.</p>
          
          <div class="btns">
-            <button class="btn"><i class="fa-solid fa-arrow-right"></i> Get Started</button>
+            <a href="#form"><button class="btn"><i class="fa-solid fa-arrow-right"></i> Get Started</button></a>
             <button class="btn"><i class="fa-solid fa-info"></i> Learn More</button>
         </div>
         
@@ -1995,10 +2009,10 @@
         </div>
 
 
-        <div class="popup1">
+        <div class="popup1" id="popup1">
             <img  src="pngtree-green-check-mark-png-image_6525691.png" alt="popup image" style="width: 75px ; height: 75px;">
             <h1 >Thank You!</h1>
-            <p>Your details have been succesfully submitted. Thanks</p>
+            <p>Your details have been succesfully submitted. You will be contacted very soon!!!</p>
             <button class="submitn" onclick="document.querySelector('.popup1').style.display='none'; document.getElementById('form').reset()">
                 OK
             </button>
@@ -2007,7 +2021,7 @@
 
 
 
-        <form action="" id="form">
+        <form action="" id="form" id="blur">
             <h2>Registration Form</h2>
             <div class="one">
              <div>  
@@ -2060,7 +2074,7 @@
                 <textarea id="message" name="message" rows="4" placeholder="Tell me about your child's interests, learning goals, or any question you have......."></textarea>
             </div>
 
-            <button type="submit" id="lastsubmit" class="btn">Submit Registration</button>
+            <button type="submit" id="lastsubmit" class="btn" >Submit Registration</button>
 
 
 
@@ -2119,7 +2133,7 @@
 
 
 
-    <script>
+    <script type="text/javascript" >
       const hambuger = document.querySelector(".Hambuger");
       const popup = document.querySelector(".popup");
       const submit = document.getElementById("lastsubmit");
@@ -2150,13 +2164,21 @@
           }
             const popup1 = document.querySelector(".popup1");
             popup1.style.display = "flex";
+
         };
+
+    
+       
+       
 
         
        
 
 
       });
+
+
+    
 
         
 
