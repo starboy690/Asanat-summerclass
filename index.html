@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    
     <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="home.js">
 
     <title>Asanat's Summerclass</title>
 
@@ -16,10 +17,29 @@
             box-sizing: border-box;
         }
 
+        html{
+            scroll-behavior: smooth;
+        }   
+
+
+        .blurred {
+            filter: blur(5px);
+            pointer-events: none;
+            user-select: none; /* prevent interaction with blurred content */
+            }
+
         body{
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
+
+        body.popup-active {
+            overflow: hidden;
+      
+      }
+
+
+
         nav{
             display: flex;
             justify-content: space-between;
@@ -1170,6 +1190,7 @@
             transition: 1s;
             display: block;
             margin-top: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             
         }
 
@@ -1462,185 +1483,36 @@
 
          }
 
-         footer{ 
-        background-color: rgba(8, 35, 46, 0.871);
-        width: 100;
-        height: 390px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-        }
-
-
-        .footers{
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            padding: 20px;
-        }
-
-        .footers .footer-one{
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 40%;
-            color: white;
-        }
-
-
-        .footer-one .logo{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-direction: row;
-            color: white;
-        }
-
-        .footer-one .logo i{
-            font-size: 26px;
-            color: #ec5454;
-        }
-
-        footer .footer-one p{
-            font-size: 16px;
-            color: white;
-           
-        }
-
-        .footer-two{
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            width: 30%;
-            margin-left: 12px;
-
-        }
-
-        .footer-two h3{
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-            margin-right: 40px;
-            color: white;
-            
-        }
-
-        .footer-two ul{
-            list-style: none;
-            color: #555;
-            font-size: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 6px;
-            line-height: 1.8;
-        }
-
-        .footer-two ul li{
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            gap: 3px;
-            color: white;
-        }
-
-        .footer-two ul li i{
-            font-size: 18px;
-            color: #0a95e1;
-            margin-right: 10px;
-        }
-
-          .footer-three{
-             height: 300px;
-            display: flex;
-            flex-direction: column;
-            width: 30%;
-
-        }
-
-        .footer-three h3{
-            font-size: 25px;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-three ul{
-            list-style: none;
-            color: white;
-            font-size: 16px;
-            line-height: 1.8;
-            padding-left: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            
-        }
-
-        .footer-three ul li{
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-            font: bold;
-            padding-left: -14px;
-             color: white;
-           
-        }
-
-        .footer-three ul li i{
-            font-size: 18px;
-            color: #0a95e1;
-            margin-right: 10px;
-        }
-
-        a{
-            text-decoration: none;
-            color: rgb(124, 121, 121);
-        }
-
-        footer hr{
-            width: 80%;
-            height: 1px;
-            background-color: #ccc;
-            margin-bottom: 20px;
-            margin-top: -40px;
-        }
+        
 
 
         .popup1{
-            position: fixed;
+            position: absolute;
             width: 400px;
             height: 300px;
             background-color: #a2cbe0;
             display: flex;
-           display: none;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 95px;
-            backdrop-filter: blur(55px);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 235px ;
+            box-shadow: 0 2px 5px 5px rgba(34, 34, 34, 0.1);
             transform: translate(-50%, -50%);
             left: 50%;
-            top: 40%;
+            border-radius: 25px;
+            z-index: 9999;
+            
+          
+            
             
         
             
 
 
         }
-
-        .popup1.show{
-            display: flex;
-        }
         /* Blur effect */
-        .blurred{
-            filter: blur(12px);
-            pointer-events: none;
-            user-select: none;
-        }
+       
 
          .popup1 img{
             margin-top: -50px;
@@ -1674,6 +1546,127 @@
             margin-top: 10px;
         }
 
+       
+        /* General Footer Styling */
+            footer {
+            background-color: #6986c9;
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            font-family: 'Segoe UI', sans-serif;
+            }
+
+            .footers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+
+            .footer-one,
+            .footer-two,
+            .footer-three {
+            flex: 1 1 300px;
+            }
+
+            .footer-one .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            }
+
+            .footer-one .logo i {
+            font-size: 28px;
+            color: #24b7ed;
+            }
+
+            .footer-one h2 {
+            font-size: 22px;
+            margin: 0;
+            color: #0f1010;
+            }
+
+            .footer-one p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #ccc;
+            }
+
+            /* Contact Info */
+            .footer-two h3,
+            .footer-three h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #101111;
+            }
+
+            .footer-two ul,
+            .footer-three ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .footer-two li,
+            .footer-three li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #ddd;
+            }
+
+            .footer-two li i {
+            margin-right: 10px;
+            color: #171818;
+            }
+
+            /* Quick Links */
+            .footer-three a {
+            text-decoration: none;
+            color: #ddd;
+            transition: color 0.3s ease;
+            }
+
+            .footer-three a:hover li {
+            color: #00c1a6;
+            cursor: pointer;
+            }
+
+            hr {
+            border: none;
+            height: 1px;
+            background-color: #444;
+            margin: 30px 0 10px;
+            }
+
+            footer p:last-child {
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+            }
+
+            /* Responsive Queries */
+            @media (max-width: 768px) {
+            .footers {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-one .logo {
+                justify-content: center;
+            }
+
+            .footer-two li,
+            .footer-three li {
+                justify-content: center;
+            }
+            }  
+        
+
 
      
 
@@ -1695,7 +1688,7 @@
 
     </style>
 </head>
-<body class="main-content" id="main-content">
+<body class="main-content">
 
     <nav>
         <div class="logo">
@@ -2009,12 +2002,12 @@
 
         </div>
 
-
+        <!-- Popup -->
         <div class="popup1" id="popup1">
             <img  src="pngtree-green-check-mark-png-image_6525691.png" alt="popup image" style="width: 75px ; height: 75px;">
             <h1 >Thank You!</h1>
             <p>Your details have been succesfully submitted. You will be contacted very soon!!!</p>
-            <button class="submitn" onclick="document.querySelector('.popup1').style.display='none'; document.getElementById('form').reset()">
+            <button class="submitn" onclick="document.querySelector('.popup1').style.display='none'; document.getElementById('form').reset(); " >
                 OK
             </button>
 
@@ -2022,7 +2015,7 @@
 
 
 
-        <form action="" id="form" id="blur">
+        <form action="send-email" method="post" id="form" >
             <h2>Registration Form</h2>
             <div class="one">
              <div>  
@@ -2075,7 +2068,7 @@
                 <textarea id="message" name="message" rows="4" placeholder="Tell me about your child's interests, learning goals, or any question you have......."></textarea>
             </div>
 
-            <button type="submit" id="lastsubmit" class="btn" onclick="openPopup()" >Submit Registration</button>
+            <button type="submit" id="lastsubmit" class="btn" onclick="" >Submit Registration</button>
 
 
 
@@ -2135,58 +2128,44 @@
 
 
     <script type="text/javascript" >
-      const hambuger = document.querySelector(".Hambuger");
-      const popup = document.querySelector(".popup");
       const submit = document.getElementById("lastsubmit");
-      const form = document.getElementById("form");
-
-      hambuger.addEventListener("click", ()=> {
-        hambuger.classList.toggle("active");
-        popup.classList.toggle("active");
-      })
-
-      submit.addEventListener("click", (e) => {
-        form.onsubmit = (e) => {
-          e.preventDefault(); // Prevent the default form submission
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const phone = document.getElementById("phone").value;
-          const childName = document.getElementById("child-name").value;
-          const age = document.getElementById("age").value;
-          const program = document.getElementById("program").value;
-          const message = document.getElementById("message").value;
-
-          console.log("Form submitted with the following data:");
-          console.log("Parent/Guardian's Name:", name);
-
-          if(!name || !email || !phone || !childName || !age || !program) {
-            alert("Please fill in all required fields.");
-            return;
-          }
-            const popup1 = document.querySelector(".popup1");
-            popup1.style.display = "flex";
-
-        };
-
-        function openPopup(){
-            document.getElementById('popup1').classList.add('show');
-            document.getElementById('form2').classList.add('blurred')
-        }
-
-    
-       
-       
-
-        
-       
+    const form = document.getElementById("form");
+    const popup1 = document.getElementById("popup1");
+    const mainContent = document.querySelector(".main-content");
+    const hamburger = document.querySelector(".Hambuger");
 
 
-      });
+submit.addEventListener("click", (e) => {
+  form.onsubmit = (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const childName = document.getElementById("child-name").value;
+    const age = document.getElementById("age").value;
+    const program = document.getElementById("program").value;
+
+    if (!name || !email || !phone || !childName || !age || !program) {
+      alert("Please fill in all required fields.");
+      return;
+    }
 
 
-    
 
-        
+
+    // Show popup and blur background
+    popup1.style.display = "flex";
+    mainContent.classList.add("blurred");
+  };
+});
+
+// Remove blur when OK is clicked
+document.querySelector(".submitn").addEventListener("click", () => {
+  popup1.style.display = "none";
+  mainContent.classList.remove("blurred");
+  form.reset();
+});
 
 
     </script>
